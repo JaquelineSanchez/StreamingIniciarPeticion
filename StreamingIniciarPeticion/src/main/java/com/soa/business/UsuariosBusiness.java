@@ -3,8 +3,6 @@
  */
 package com.soa.business;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,11 +32,14 @@ public class UsuariosBusiness {
         try {            
             Usuario user = usuariosDao.buscarUsuario(usuario);
             if(user != null)
-                respuesta.setMessage("Ok.");
-            else
+            {
+                respuesta.setIdusuario(user.getIdusuario());
+                respuesta.setNombre(user.getNombre());
+                respuesta.setPeliculaSolicitada(usuario.getPeliculaSolicitada());
+                
+            }else
                 respuesta.setMessage(String.format("El usuario %s no existe.", 
-                        usuario.getNombre()));
-            respuesta.setUsuario(user);
+                        usuario.getNombre()));            
         } catch(Exception e) {
             e.printStackTrace();
             respuesta.setMessage("Error en la BD al consultar usuario");                     

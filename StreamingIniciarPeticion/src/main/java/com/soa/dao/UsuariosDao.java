@@ -3,11 +3,6 @@
  */
 package com.soa.dao;
 
-import java.util.ArrayList;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -38,10 +33,10 @@ public class UsuariosDao {
         try {
             Usuario user = 
                     jdbcTemplate.queryForObject(String.format(
-                            "select * from usuarios where nombre = '%s' and password = '%s';",
+                            "select idusuario,nombre,apellido,password from usuarios where nombre = '%s' and password = '%s';",
                     usuario.getNombre(),usuario.getPassword()), 
-                    new BeanPropertyRowMapper<>(Usuario.class));
-            user.setPeliculaSolicitada(usuario.getPeliculaSolicitada());
+                    new BeanPropertyRowMapper<>(Usuario.class));            
+            System.out.println(user.getIdusuario());
             return user;
         } catch (EmptyResultDataAccessException e) {
             // Manejo de la excepción si no se encuentra el usuario

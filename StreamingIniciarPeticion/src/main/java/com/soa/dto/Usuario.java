@@ -8,7 +8,7 @@ import com.google.gson.Gson;
 public class Usuario {
     
     /*Id del usuario*/
-    private Integer id;
+    private Integer idusuario;
     
     /*nombre del usuario*/
     private String nombre;
@@ -31,12 +31,12 @@ public class Usuario {
         
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getIdusuario() {
+        return idusuario;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdusuario(Integer id) {
+        this.idusuario = id;
     }
 
     public String getNombre() {

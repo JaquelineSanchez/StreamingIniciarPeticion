@@ -43,7 +43,7 @@ public class ArtemisListenerQuery {
         System.out.println(usuario);
         Respuesta respuesta = business.buscarUsuario(usuario);
         String colaSalida;
-        if(respuesta.getMessage() == "Ok.") {
+        if(respuesta.getIdusuario() != null) {
             colaSalida = nextQueueName;
         }
         else {
