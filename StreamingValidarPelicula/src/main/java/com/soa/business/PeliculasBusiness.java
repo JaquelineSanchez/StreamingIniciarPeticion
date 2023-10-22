@@ -11,7 +11,7 @@ import com.soa.dto.Pelicula;
 import com.soa.dto.Respuesta;
 
 /**
- * Clase de negocio para validar pelicula
+ * Capa de negocio para validar peliculas
  * 
  */
 @Component
@@ -24,7 +24,7 @@ public class PeliculasBusiness {
     /**
      * Validar que exista la pelicula en la BD
      * @param titulo a consultar
-     * @return mensaje de exito o lista de peliculas disponibles
+     * @return id de la pelicula o lista de peliculas disponibles
      */
     public Respuesta validarPelicula(String titulo) {
         

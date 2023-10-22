@@ -11,7 +11,7 @@ import com.soa.dto.Respuesta;
 import com.soa.dto.Usuario;
 
 /**
- * Clase para 
+ * Capa de negocio que consulta usuarios
  * 
  */
 @Component
@@ -22,7 +22,7 @@ public class UsuariosBusiness {
     private UsuariosDao usuariosDao;
     
     /**
-     * Consulta usuarios por login
+     * Consulta usuario por nombre y contraseña
      * @param usuario
      * @return
      */

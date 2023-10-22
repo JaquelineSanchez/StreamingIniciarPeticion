@@ -3,7 +3,7 @@ package com.soa.dto;
 import com.google.gson.Gson;
 
 /**
- * Clase que modela la información de una persona.
+ * Clase que modela la información de un usuario.
  */
 public class Usuario {
     
@@ -13,7 +13,7 @@ public class Usuario {
     /*nombre del usuario*/
     private String nombre;
     
-    /*nombre del usuario*/
+    /*Apellido del usuario*/
     private String apellido;
      
     /*Contraseña del usuario*/

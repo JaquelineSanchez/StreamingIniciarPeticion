@@ -7,13 +7,13 @@ import com.google.gson.Gson;
  */
 public class Peticion {
     
-    /*Id del Usuario que consulta*/
+    /*Id del Usuario que solicita el servicio*/
     private Integer idusuario;
     
-    /*Usuario que consulta*/
+    /*Nombre de Usuario solicitante*/
     private String nombre;
     
-    /*Pelicula deseada*/
+    /*Titulo de la pelicula deseada*/
     private String peliculaSolicitada;
 
 

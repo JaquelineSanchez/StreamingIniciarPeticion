@@ -9,7 +9,7 @@ import com.google.gson.Gson;
  */
 public class Respuesta {
 
-    /*Mensaje de respuesta*/
+    /*Mensaje de respuesta en caso de error*/
     private String message;
     
     /*Peticion aprobada*/

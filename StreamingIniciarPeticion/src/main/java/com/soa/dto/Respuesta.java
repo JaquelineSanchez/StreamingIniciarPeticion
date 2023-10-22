@@ -13,10 +13,10 @@ public class Respuesta {
     /*Id del Usuario que consulta*/
     private Integer idusuario;
     
-    /*Usuario que consulta*/
+    /*Nombre de usuario que consulta*/
     private String nombre;
     
-    /*Pelicula deseada*/
+    /*Titulo de pelicula deseada*/
     private String peliculaSolicitada;
 
     public void setMessage(String message) {
