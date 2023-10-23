@@ -26,7 +26,7 @@ public class Pelicula {
     /**Duracion de la pelicula*/
     private int duracion;
 
-    public Integer getIpelicula() {
+    public Integer getIdpelicula() {
         return idpelicula;
     }
 

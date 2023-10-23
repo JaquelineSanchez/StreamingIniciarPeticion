@@ -12,17 +12,23 @@ public class Respuesta {
     /*Mensaje de respuesta en caso de error*/
     private String message;
     
-    /*Peticion aprobada*/
-    private Peticion peticion;
+    /*Id del usuario*/
+    private Integer idusuario;
     
     /*Id de la pelicula*/
     private Integer idpelicula;
+    
+    /*Tiempo de renta de la pelicula*/
+    private Integer tiempo;
+    
+    /*Numero de tarjeta de credito del usuario*/
+    private String numtarjeta;
 
     public void setMessage(String message) {
         this.message = message;
     }
     
-    /*Lista de peliculas disponibles*/
+    /*Lista de peliculas disponibles en caso de error*/
     private List<Pelicula> peliculasDisponibles;
 
     @Override
@@ -43,17 +49,6 @@ public class Respuesta {
         this.idpelicula = idpelicula;
     }
 
-
-    public Peticion getPeticion() {
-        return peticion;
-    }
-
-
-    public void setPeticion(Peticion peticion) {
-        this.peticion = peticion;
-    }
-
-
     public String getMessage() {
         return message;
     }
@@ -64,6 +59,30 @@ public class Respuesta {
 
     public void setPeliculasDisponibles(List<Pelicula> peliculasDisponibles) {
         this.peliculasDisponibles = peliculasDisponibles;
+    }
+
+    public Integer getIdusuario() {
+        return idusuario;
+    }
+
+    public void setIdusuario(Integer idusuario) {
+        this.idusuario = idusuario;
+    }
+
+    public Integer getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(Integer tiempo) {
+        this.tiempo = tiempo;
+    }
+
+    public String getNumtarjeta() {
+        return numtarjeta;
+    }
+
+    public void setNumtarjeta(String numtarjeta) {
+        this.numtarjeta = numtarjeta;
     }
 
 }
