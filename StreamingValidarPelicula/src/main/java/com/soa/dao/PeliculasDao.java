@@ -38,7 +38,7 @@ public class PeliculasDao {
         try {
             Pelicula pelicula = 
                     jdbcTemplate.queryForObject(String.format(
-                            "select idpelicula,titulo from peliculas where titulo = '%s';",
+                            "select idpelicula,titulo,duracion from peliculas where titulo = '%s';",
                     titulo), 
                     new BeanPropertyRowMapper<>(Pelicula.class));            
             return pelicula;

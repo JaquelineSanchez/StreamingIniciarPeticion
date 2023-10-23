@@ -42,15 +42,13 @@ public class ArtemisListenerQuery {
         Peticion peticion = gson.fromJson(message, Peticion.class);
         System.out.println(peticion);
         Respuesta respuesta = 
-                business.validarPelicula(peticion.getPeliculaSolicitada());
+                business.validarPelicula(peticion);
         String colaSalida;
-        if(respuesta.getIdpelicula() != null) {
-            respuesta.setPeticion(peticion);
+        if(respuesta.getIdpelicula() != null)            
             colaSalida = nextQueueName;
-        }
-        else {
-            colaSalida = outQueueName;
-        }               
+        
+        else
+            colaSalida = outQueueName;                      
         try {
             sender.sendMessage(respuesta.toString(), colaSalida);
             System.out.println(String.format("Mensaje enviado: %s", 
