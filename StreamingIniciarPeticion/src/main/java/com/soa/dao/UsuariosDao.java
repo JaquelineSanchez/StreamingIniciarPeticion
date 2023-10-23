@@ -26,7 +26,7 @@ public class UsuariosDao {
     /**
      * Buscar usuario en base a nombre y password.
      * @param usuario
-     * @return Usuario en caso de existo y null si no se encuentra
+     * @return Usuario en caso de exito y null si no se encuentra
      */
     public Usuario buscarUsuario(Usuario usuario) {        
       
@@ -35,8 +35,7 @@ public class UsuariosDao {
                     jdbcTemplate.queryForObject(String.format(
                             "select idusuario,nombre,apellido,password from usuarios where nombre = '%s' and password = '%s';",
                     usuario.getNombre(),usuario.getPassword()), 
-                    new BeanPropertyRowMapper<>(Usuario.class));            
-            System.out.println(user.getIdusuario());
+                    new BeanPropertyRowMapper<>(Usuario.class));                        
             return user;
         } catch (EmptyResultDataAccessException e) {
             // Manejo de la excepción si no se encuentra el usuario

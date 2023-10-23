@@ -23,8 +23,9 @@ public class UsuariosBusiness {
     
     /**
      * Consulta usuario por nombre y contraseña
-     * @param usuario
-     * @return
+     * @param peticion recibida
+     * @return mensaje de error o 
+     * json con idusuario,pelicula, tiempo y numtarjeta
      */
     public Respuesta buscarUsuario(Usuario usuario) {
         
@@ -33,9 +34,14 @@ public class UsuariosBusiness {
             Usuario user = usuariosDao.buscarUsuario(usuario);
             if(user != null)
             {
+                System.out.println(
+                        String.format(
+                                "Inicio de sesión exitoso, Bienvenid@: %s %s", 
+                                user.getNombre(),user.getApellido()));
                 respuesta.setIdusuario(user.getIdusuario());
-                respuesta.setNombre(user.getNombre());
+                respuesta.setNumtarjeta(usuario.getNumtarjeta());                
                 respuesta.setPeliculaSolicitada(usuario.getPeliculaSolicitada());
+                respuesta.setTiempo(usuario.getTiempo());
                 
             }else
                 respuesta.setMessage(String.format("El usuario %s no existe.", 

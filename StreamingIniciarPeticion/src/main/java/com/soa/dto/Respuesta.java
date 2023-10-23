@@ -7,17 +7,20 @@ import com.google.gson.Gson;
  */
 public class Respuesta {
 
-    /*Mensaje de respuesta*/
+    /*Mensaje de respuesta en casos de error*/
     private String message;
     
     /*Id del Usuario que consulta*/
     private Integer idusuario;
     
-    /*Nombre de usuario que consulta*/
-    private String nombre;
+    /*Numero de tarjeta de credito del usuario*/
+    private String numtarjeta;
     
     /*Titulo de pelicula deseada*/
     private String peliculaSolicitada;
+    
+    /*Tiempo de renta para la pelicula*/
+    private Integer tiempo;
 
     public void setMessage(String message) {
         this.message = message;
@@ -43,17 +46,6 @@ public class Respuesta {
         this.idusuario = idusuario;
     }
 
-
-    public String getNombre() {
-        return nombre;
-    }
-
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-
     public String getPeliculaSolicitada() {
         return peliculaSolicitada;
     }
@@ -66,6 +58,26 @@ public class Respuesta {
 
     public String getMessage() {
         return message;
+    }
+
+
+    public String getNumtarjeta() {
+        return numtarjeta;
+    }
+
+
+    public void setNumtarjeta(String numtarjeta) {
+        this.numtarjeta = numtarjeta;
+    }
+
+
+    public Integer getTiempo() {
+        return tiempo;
+    }
+
+
+    public void setTiempo(Integer tiempo) {
+        this.tiempo = tiempo;
     }
 
 }

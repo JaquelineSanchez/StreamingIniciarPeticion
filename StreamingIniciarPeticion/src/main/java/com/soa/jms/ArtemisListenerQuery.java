@@ -49,7 +49,7 @@ public class ArtemisListenerQuery {
         else {
             colaSalida = outQueueName;
         }       
-        System.out.println("resultado de la consulta: " + respuesta);
+        System.out.println("Resultado de la consulta: " + respuesta);
         try {
             sender.sendMessage(respuesta.toString(), colaSalida);
             System.out.println(String.format("Mensaje enviado: %s", 
