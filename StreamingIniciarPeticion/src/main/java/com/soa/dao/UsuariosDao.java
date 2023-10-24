@@ -35,7 +35,7 @@ public class UsuariosDao {
                     jdbcTemplate.queryForObject(String.format(
                             "select idusuario,nombre,apellido,password from usuarios where nombre = '%s' and password = '%s';",
                     usuario.getNombre(),usuario.getPassword()), 
-                    new BeanPropertyRowMapper<>(Usuario.class));                        
+                    new BeanPropertyRowMapper<Usuario>(Usuario.class));                        
             return user;
         } catch (EmptyResultDataAccessException e) {
             // Manejo de la excepción si no se encuentra el usuario

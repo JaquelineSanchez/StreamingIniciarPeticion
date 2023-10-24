@@ -40,7 +40,7 @@ public class PeliculasDao {
                     jdbcTemplate.queryForObject(String.format(
                             "select idpelicula,titulo,duracion from peliculas where titulo = '%s';",
                     titulo), 
-                    new BeanPropertyRowMapper<>(Pelicula.class));            
+                    new BeanPropertyRowMapper<Pelicula>(Pelicula.class));            
             return pelicula;
         } catch (EmptyResultDataAccessException e) {
             // Manejo de la excepción si no se encuentra la pelicula
@@ -53,17 +53,10 @@ public class PeliculasDao {
      * @return Lista de Peliculas 
      */
     public List<Pelicula> mostrarCatalogo() {
-        List<Pelicula> disponibles  = new ArrayList<>();
-        List<Map<String, Object>> lista = jdbcTemplate.queryForList(
-                "select titulo, duracion, anio, genero from peliculas;");                        
-        for (Map<String, Object> registro : lista) {
-            Pelicula peli = new Pelicula();            
-            peli.setTitulo((String)registro.get("titulo"));
-            peli.setDuracion((Integer)registro.get("duracion"));
-            peli.setAnio((Integer)registro.get("anio"));
-            peli.setGenero((Integer)registro.get("genero"));
-            disponibles.add(peli);
-        }
+        
+        List<Pelicula> disponibles = jdbcTemplate.query(
+                "select titulo, duracion, anio, genero from peliculas;",
+                new BeanPropertyRowMapper<Pelicula>(Pelicula.class));        
         return disponibles;
     }
 
